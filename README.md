@@ -18,4 +18,4 @@ But after that:
 
 ## Class
 
-- Finish the vies and take screenshots of each page so that the User Handbook can be completed
+- Finish the views and take screenshots of each page so that the User Handbook can be completed
