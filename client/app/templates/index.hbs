@@ -1,0 +1,28 @@
+{{#if session.isAuthenticated}}
+    {{#link-to "home"}}Home{{/link-to}}
+    <a id="logout" {{ action "invalidateSession" }}>Logout</a>
+{{else}}
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Welcome!
+            </div>
+                <div class="panel-body">
+                    <p class="card-text">Welcome to Lastnamerson"s Cookbook! Learn to cook like a pro here.</p>
+                    <div>
+                        {{#bs-form formLayout="horizontal" model=this action="authenticate" on="submit"}}
+                            {{bs-form-element controlType="email" label="Email" placeholder="Email" property="email"}}
+                            {{bs-form-element controlType="password" label="Password" placeholder="Password" property="password"}}
+                            {{bs-form-element controlType="checkbox" label="Remember me" property="rememberMe"}}
+                            {{#bs-button-group}}
+                                {{bs-button defaultText="Login" type="primary" buttonType="submit"}}
+                                {{bs-button defaultText="Register" type="warning"}}
+                            {{/bs-button-group}}
+                        {{/bs-form}}
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+{{/if}}

@@ -1,0 +1,3 @@
+{{#if session.isAuthenticated}}
+  <li><a href="/users/{{session.currentUser.id}}">Logged in as {{session.currentUser.email}}</a></li>
+{{/if}}
