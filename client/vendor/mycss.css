@@ -1,0 +1,32 @@
+.tm-input::-webkit-input-placeholder {
+  color: #999;
+  opacity: 1;
+  margin-left: 15px !important;
+}
+
+.tm-input:-moz-placeholder { /* Firefox 18- */
+  color: #999;
+  opacity: 1;
+  margin-left: 15px !important;
+}
+
+.tm-input::-moz-placeholder {  /* Firefox 19+ */
+  color: #999;
+  opacity: 1;
+  margin-left: 15px !important;
+
+}
+
+.tm-input:-ms-input-placeholder {
+  color: #999;
+  opacity: 1;
+  margin-left: 15px !important;
+}
+
+.modal-open {
+  padding-right: 0 !important;
+}
+
+html {
+  overflow-y: scroll !important;
+}

@@ -3,22 +3,22 @@ export default function() {
 		return {
 			data: [
 					{id: 1, type: "recipe", attributes: {
-						name: "test", author: "admin", tags: ["test1", "test2"], image: "http://placehold.it/250x150", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor ante ut odio tincidunt interdum. Etiam sodales elementum metus sed egestas. Donec mattis sollicitudin tempor. Donec finibus nisl vitae turpis tristique hendrerit. "
+            recipeid: 1, name: "test", author: "admin", tags: ["test1", "test2"], image: "http://placehold.it/250x150", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor ante ut odio tincidunt interdum. Etiam sodales elementum metus sed egestas. Donec mattis sollicitudin tempor. Donec finibus nisl vitae turpis tristique hendrerit. "
 					}},
 					{id: 2, type: "recipe", attributes: {
-						name: "test", author: "admin", image: "http://placehold.it/250x150", tags: ["test3", "test4"], body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor ante ut odio tincidunt interdum. Etiam sodales elementum metus sed egestas. Donec mattis sollicitudin tempor. Donec finibus nisl vitae turpis tristique hendrerit. "
+            recipeid: 2, name: "test", author: "admin", image: "http://placehold.it/250x150", tags: ["test3", "test4"], body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor ante ut odio tincidunt interdum. Etiam sodales elementum metus sed egestas. Donec mattis sollicitudin tempor. Donec finibus nisl vitae turpis tristique hendrerit. "
 					}},
 					{id: 3, type: "recipe", attributes: {
-						name: "test", author: "admin", image: "http://placehold.it/250x150", tags: ["test5", "test6"], body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor ante ut odio tincidunt interdum. Etiam sodales elementum metus sed egestas. Donec mattis sollicitudin tempor. Donec finibus nisl vitae turpis tristique hendrerit. "
+            recipeid: 3, name: "test", author: "admin", image: "http://placehold.it/250x150", tags: ["test5", "test6"], body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor ante ut odio tincidunt interdum. Etiam sodales elementum metus sed egestas. Donec mattis sollicitudin tempor. Donec finibus nisl vitae turpis tristique hendrerit. "
 					}},
 					{id: 4, type: "recipe", attributes: {
-						name: "test", author: "admin", image: "http://placehold.it/250x150", tags: ["test5", "test6"], body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor ante ut odio tincidunt interdum. Etiam sodales elementum metus sed egestas. Donec mattis sollicitudin tempor. Donec finibus nisl vitae turpis tristique hendrerit. "
+            recipeid: 4, name: "test", author: "admin", image: "http://placehold.it/250x150", tags: ["test5", "test6"], body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor ante ut odio tincidunt interdum. Etiam sodales elementum metus sed egestas. Donec mattis sollicitudin tempor. Donec finibus nisl vitae turpis tristique hendrerit. "
 					}},
 					{id: 5, type: "recipe", attributes: {
-						name: "test", author: "admin", image: "http://placehold.it/250x150", tags: ["test1", "test5"], body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor ante ut odio tincidunt interdum. Etiam sodales elementum metus sed egestas. Donec mattis sollicitudin tempor. Donec finibus nisl vitae turpis tristique hendrerit. "
+            recipeid: 5, name: "test", author: "admin", image: "http://placehold.it/250x150", tags: ["test1", "test5"], body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor ante ut odio tincidunt interdum. Etiam sodales elementum metus sed egestas. Donec mattis sollicitudin tempor. Donec finibus nisl vitae turpis tristique hendrerit. "
 					}},
 					{id: 6, type: "recipe", attributes: {
-						name: "test", author: "admin", image: "http://placehold.it/250x150", tags: ["test4", "test2"], body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor ante ut odio tincidunt interdum. Etiam sodales elementum metus sed egestas. Donec mattis sollicitudin tempor. Donec finibus nisl vitae turpis tristique hendrerit. "
+            recipeid: 6, name: "test", author: "admin", image: "http://placehold.it/250x150", tags: ["test4", "test2"], body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor ante ut odio tincidunt interdum. Etiam sodales elementum metus sed egestas. Donec mattis sollicitudin tempor. Donec finibus nisl vitae turpis tristique hendrerit. "
 					}}
 				]
 		};

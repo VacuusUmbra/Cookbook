@@ -10,6 +10,7 @@ Router.map(function() {
   this.route("about");
   this.route('menu');
   this.route('profile');
+  this.route('recipe');
 });
 
 export default Router;

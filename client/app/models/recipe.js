@@ -5,5 +5,6 @@ export default DS.Model.extend({
   author: DS.attr(),
   tags: DS.attr(),
   body: DS.attr(),
-  image: DS.attr()
+  image: DS.attr(),
+  recipeid: DS.attr()
 });

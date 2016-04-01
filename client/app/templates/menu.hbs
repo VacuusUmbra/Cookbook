@@ -1,3 +1,24 @@
 {{#if session.isAuthenticated}}
-  <li><a href="/users/{{session.currentUser.id}}">Logged in as {{session.currentUser.email}}</a></li>
+    <li><a href="/users/{{session.currentUser.id}}">Logged in as {{session.currentUser.email}}</a></li>
+{{else}}
+    <li>
+        <button type="button" {{action "openLoginModal"}} class="btn btn-default navbar-btn">Login</button>
+        <button type="button" {{action "openRegisterModal"}} class="btn btn-default navbar-btn">Register</button>
+    </li>
 {{/if}}
+
+<div id="loginModal">
+  {{#bs-modal body=false open=loginModal footer=false title="Login"}}
+    {{#bs-modal-body}}
+
+    {{/bs-modal-body}}
+  {{/bs-modal}}
+</div>
+
+<div id="registerModal">
+  {{#bs-modal body=false open=registerModal footer=false title="Register"}}
+    {{#bs-modal-body}}
+
+    {{/bs-modal-body}}
+  {{/bs-modal}}
+</div>

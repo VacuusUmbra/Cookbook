@@ -2,6 +2,7 @@ import Ember from "ember";
 
 export default Ember.Component.extend({
   click() {
-    this.sendAction("openModal");
+    console.log("recipe clicked");
+    this.sendAction("test");
   }
 });

@@ -17,54 +17,74 @@
 <div class="row">
     <div class="col-md-offset-2 col-md-8" style="margin-top: 20px;">
       {{#each model as |recipePreview|}}
-        {{recipe-display name=recipePreview.name tags=recipePreview.tags body=recipePreview.body image=recipePreview.image}}
+        {{recipe-display recipeid=recipePreview.recipeid name=recipePreview.name author=recipePreview.author tags=recipePreview.tags body=recipePreview.body image=recipePreview.image test="test"}}
       {{/each}}
-
     </div>
 </div>
 
-{{#if createRecipeModal}}
-    <div id="recipeModal">
-      {{#bs-modal size="lg" body=false open=openNewRecipeModal footer=false Title="Recipe"}}
-        {{#bs-modal-body}}
-          {{#bs-form formLayout="horizontal" action=(action "submitModal") model=this}}
-              <div class="row">
-                  <div class="col-md-6 col-md-offset-0">
-                      <div style="margin-left: -190px;">
-                        {{bs-form-element placeholder="Recipe Title" property="recipeTitle"}}
+{{!--{{#if createRecipeModal}}--}}
+<div id="recipeModal">
+  {{#bs-modal size="lg" body=false open=openNewRecipeModal footer=false title="Recipe"}}
+    {{#bs-modal-body}}
+      {{#bs-form formLayout="horizontal" action=(action "submitModal") model=this}}
+          <div class="row">
+              <div class="col-md-6 col-md-offset-0">
+                  <div style="margin-left: -195px;">
+                    {{bs-form-element placeholder="Recipe Title" property="recipeTitle"}}
+                  </div>
+                  <div class="row">
+                      <div class="col-md-5">
+                          <div style="margin-left: 20px;" class="input-group col-md-12">
+                              <input type="text" class="form-control" placeholder="Cooktime">
+                              <span class="input-group-addon" property="cooktime">mins</span>
+                          </div>
                       </div>
-                      <div style="margin-left: 20px;" class="input-group col-md-4">
-                          <input type="text" class="form-control" placeholder="Cooktime" aria-describedby="basic-addon1">
-                          <span class="input-group-addon" id="basic-addon1">mins</span>
-                      </div>
-                      <div class="row">
-                          <div class="col-md-2">
-                            {{bs-form-element controlType="checkbox" label="tag1" property="tag1"}}
-                          </div>
-                          <div class="col-md-2">
-                            {{bs-form-element controlType="checkbox" label="tag2" property="tag2"}}
-                          </div>
-                          <div class="col-md-2">
-                            {{bs-form-element controlType="checkbox" label="tag3" property="tag3"}}
-                          </div>
-                          <div class="col-md-2">
-                            {{bs-form-element controlType="checkbox" label="tag4" property="tag4"}}
-                          </div>
-                          <div class="col-md-2">
-                            {{bs-form-element controlType="checkbox" label="tag5" property="tag5"}}
-                          </div>
-                          <div class="col-md-2">
-                            {{bs-form-element controlType="checkbox" label="tag6" property="tag6"}}
+                      <div class="col-md-5">
+                          <div style="margin-left: 20px;" class="input-group col-md-12">
+                              <input type="text" class="form-control" placeholder="Preptime">
+                              <span class="input-group-addon" property="preptime">mins</span>
                           </div>
                       </div>
                   </div>
+                  <div class="row">
+                      <div class="col-md-2">
+                        {{bs-form-element controlType="checkbox" label="tag1" property="tag1"}}
+                      </div>
+                      <div class="col-md-2">
+                        {{bs-form-element controlType="checkbox" label="tag2" property="tag2"}}
+                      </div>
+                      <div class="col-md-2">
+                        {{bs-form-element controlType="checkbox" label="tag3" property="tag3"}}
+                      </div>
+                      <div class="col-md-2">
+                        {{bs-form-element controlType="checkbox" label="tag4" property="tag4"}}
+                      </div>
+                      <div class="col-md-2">
+                        {{bs-form-element controlType="checkbox" label="tag5" property="tag5"}}
+                      </div>
+                      <div class="col-md-2">
+                        {{bs-form-element controlType="checkbox" label="tag6" property="tag6"}}
+                      </div>
+                  </div>
               </div>
-              <div class="row">
-                  <div style="margin-left: 20px;" class="col-md-11">{{bs-textarea placeholder="Recipe text" property="recipeText"}}</div>
+          </div>
+          <div class="row">
+              <div style="margin-left: 20px;" class="col-md-11">
+                {{!--{{bs-textarea placeholder="Ingredients" property="ingredients"}} --}}
+                  <input id="ingredients" type="text" name="ingredients" placeholder="ingredients" class="tm-input"/>
               </div>
-          {{/bs-form}}
-        {{/bs-modal-body}}
-        {{bs-modal-footer closeTitle="Close" submitTitle="Submit"}}
-      {{/bs-modal}}
-    </div>
-{{/if}}
+          </div>
+          <div class="row">
+              <div style="margin-left: 20px; margin-top:20px;" class="col-md-11">
+                {{bs-textarea placeholder="Directions" property="directions"}}
+              </div>
+          </div>
+      {{/bs-form}}
+    {{/bs-modal-body}}
+    {{#bs-modal-footer}}
+      {{bs-button defaultText="Cancel" type="success" action="hideCreateRecipeModal"}}
+      {{bs-button defaultText="Save changes" type="primary" buttonType="submit"}}
+    {{/bs-modal-footer}}
+  {{/bs-modal}}
+</div>
+{{!--{{/if}}--}}

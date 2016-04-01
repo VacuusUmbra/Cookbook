@@ -1,30 +1,47 @@
 import Ember from "ember";
 
 export default Ember.Controller.extend({
-    queryParams: ["searchTerms"],
-    searchTerms: "",
+  queryParams: ["searchTerms"],
+  searchTerms: "",
 
-    actions: {
-        search() {
-          console.log(this.getProperties("searchTerms"));
-        },
+  hideModal: function () {
+    Ember.run.scheduleOnce("render", this, function () {
+      this.set("openNewRecipeModal", false);
+    });
+  }.on("init"),
 
-        createRecipeModal() {
-          this.set("createRecipeModal", true);
-          this.set("openNewRecipeModal", true);
-        },
+  taggify: function () {
+    Ember.run.scheduleOnce("afterRender", this, function () {
+      Ember.$("#ingredients").tagsManager({
+        prefilled: ["Pizza", "Italian"],
+        CapitalizeFirstLetter: true
+      });
+    });
+  }.on("init"),
 
-        hideCreateRecipeModal() {
-          this.set("openNewRecipeModal", false);
-        },
+  actions: {
+    search() {
+      console.log(this.getProperties("searchTerms"));
+    },
 
-        submitModal() {
-          console.log("Submitting modal");
-        }
-      /*,
+    createRecipeModal() {
+      this.set("createRecipeModal", true);
+      this.set("openNewRecipeModal", true);
+    },
 
-        openModal{
+    hideCreateRecipeModal() {
+      this.set("openNewRecipeModal", false);
+    },
 
-        }*/
+    submitModal() {
+      console.log(Ember.$("#ingredients").tagsManager('tags'));
+      this.set("openNewRecipeModal", false);
+
+      console.log("Submitting modal");
+    },
+
+    test() {
+      console.log("Test");
     }
+  }
 });

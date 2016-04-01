@@ -1,5 +1,5 @@
 <div class="col-md-3">
-    <div class="panel panel-default" property="{{id}}">
+    <div class="panel panel-default" recipeId={{recipeid}}>
         <div class="panel-heading">
             <h3 class="panel-title">{{name}}</h3>
         </div>
@@ -7,6 +7,9 @@
             <p><img src="{{image}}"/></p>
             <p>{{body}}</p>
         </div>
-        <div class="panel-footer">Matching tags: {{tags}}</div>
+        <div class="panel-footer">
+            <p>Author: {{author}}</p>
+            <p style="font-size: 75%;">Matching tags: {{tags}}</p>
+        </div>
     </div>
 </div>

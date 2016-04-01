@@ -1,61 +1,134 @@
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-10 col-md-offset-1">
         <div class="col-md-2">
             <div id="profile">
                 <div class="row">
-                    <div class="col-md-2">
-                        <div id="profile-image">
-                            <!-- Insert placeholder image for demo purposes -->
-                            <img height="100" width="100"
-                                 src="https://tracker.moodle.org/secure/attachment/30912/f3.png"/>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div id="profile-name">
-                                    <span>Test Profile</span>
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Test Profile</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="profile-image">
+                                    <!-- Insert placeholder image for demo purposes -->
+                                    <img class="img-responsive center-block" height="100" width="100"
+                                         src="https://tracker.moodle.org/secure/attachment/30912/f3.png"/>
                                 </div>
                             </div>
+                            <div class="panel-footer">
+                                <span>Joined: April, 1st, 2016</span>
+                                <span>Uploaded Recipes: 15</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-8">
+        <div class="col-md-10">
+            <img src="http://placehold.it/1155x230" style="padding-bottom: 50px;"/>
             <div id="my-recipes">
                 <div class="row">
-                    <div class="col-md-offset-1 col-md-5">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">My recipes</h3>
-                            </div>
-                            <div class="panel-body">
-                                <ul class="list-group">
-                                    <li class="list-group-item">Example Recipe 1</li>
-                                    <li class="list-group-item">Example Recipe 2</li>
-                                    <li class="list-group-item">Example Recipe 3</li>
-                                    <li class="list-group-item">Example Recipe 4</li>
-                                    <li class="list-group-item">Example Recipe 5</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-offset-1 col-md-5">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">My favorite recipes</h3>
-                            </div>
-                            <div class="panel-body">
-                                <ul class="list-group">
-                                    <li class="list-group-item">Example Recipe 1</li>
-                                    <li class="list-group-item">Example Recipe 2</li>
-                                    <li class="list-group-item">Example Recipe 3</li>
-                                    <li class="list-group-item">Example Recipe 4</li>
-                                    <li class="list-group-item">Example Recipe 5</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                  {{#if admin}}
+                      <div class="row">
+                          <div class="col-md-4">
+                              <div class="panel panel-default">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title">My recipes</h3>
+                                  </div>
+                                  <div class="panel-body">
+                                      <ul class="list-group">
+                                          <li class="list-group-item">Example Recipe 1</li>
+                                          <li class="list-group-item">Example Recipe 2</li>
+                                          <li class="list-group-item">Example Recipe 3</li>
+                                          <li class="list-group-item">Example Recipe 4</li>
+                                          <li class="list-group-item">Example Recipe 5</li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="panel panel-default">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title">My favorite recipes</h3>
+                                  </div>
+                                  <div class="panel-body">
+                                      <ul class="list-group">
+                                          <li class="list-group-item">Example Recipe 1</li>
+                                          <li class="list-group-item">Example Recipe 2</li>
+                                          <li class="list-group-item">Example Recipe 3</li>
+                                          <li class="list-group-item">Example Recipe 4</li>
+                                          <li class="list-group-item">Example Recipe 5</li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="col-md-4">
+                              <div class="panel panel-default">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title">Flagged users</h3>
+                                  </div>
+                                  <div class="panel-body">
+                                      <ul class="list-group">
+                                          <li class="list-group-item">User 1, Flags: 15
+                                              <button type="button" class="btn-danger pull-right">Ban user</button>
+                                          </li>
+                                          <li class="list-group-item">User 2, Flags: 12
+                                              <button type="button" class="btn-danger pull-right">Ban user</button>
+                                          </li>
+                                          <li class="list-group-item">User 3, Flags: 10
+                                              <button type="button" class="btn-danger pull-right">Ban user</button>
+                                          </li>
+                                          <li class="list-group-item">User 4, Flags: 6
+                                              <button type="button" class="btn-danger pull-right">Ban user</button>
+                                          </li>
+                                          <li class="list-group-item">User 5, Flags: 5
+                                              <button type="button" class="btn-danger pull-right">Ban user</button>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                  {{else}}
+                      <div class="col-md-5">
+                          <div class="panel panel-default">
+                              <div class="panel-heading">
+                                  <h3 class="panel-title">My recipes</h3>
+                              </div>
+                              <div class="panel-body">
+                                  <ul class="list-group">
+                                      <li class="list-group-item">Example Recipe 1</li>
+                                      <li class="list-group-item">Example Recipe 2</li>
+                                      <li class="list-group-item">Example Recipe 3</li>
+                                      <li class="list-group-item">Example Recipe 4</li>
+                                      <li class="list-group-item">Example Recipe 5</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-offset-1 col-md-5">
+                          <div class="panel panel-default">
+                              <div class="panel-heading">
+                                  <h3 class="panel-title">My favorite recipes</h3>
+                              </div>
+                              <div class="panel-body">
+                                  <ul class="list-group">
+                                      <li class="list-group-item">Example Recipe 1</li>
+                                      <li class="list-group-item">Example Recipe 2</li>
+                                      <li class="list-group-item">Example Recipe 3</li>
+                                      <li class="list-group-item">Example Recipe 4</li>
+                                      <li class="list-group-item">Example Recipe 5</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  {{/if}}
                 </div>
             </div>
         </div>
