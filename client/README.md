@@ -1,3 +1,5 @@
+# IGNORE EVERYTHING IN HERE, THIS IS AN AUTO GENERATED TEMPLATE!
+
 # Client
 
 This README outlines the details of collaborating on this Ember application.
