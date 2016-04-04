@@ -7,11 +7,18 @@
                 </h1>
             </div>
         </div>
-        <div id="preptime">
-            <span> <b>Preptime:</b> Example time </span>
-        </div>
-        <div id="cooktime">
-            <span> <b>Cooktime:</b> Example time </span>
+        <div class="media">
+            <a class="media-left" href="#">
+                <img class="media-object" src="http://placehold.it/150x150" alt="Placeholder image">
+            </a>
+            <div class="media-body">
+                <div id="preptime">
+                    <span> <b>Preptime:</b> Example time </span>
+                </div>
+                <div id="cooktime">
+                    <span> <b>Cooktime:</b> Example time </span>
+                </div>
+            </div>
             <hr/>
         </div>
         <div id="content">
@@ -73,7 +80,7 @@
           <div id="comments">
               <h2>Comments</h2>
               <div style="margin-bottom:20px;">
-                {{bs-textarea placeholder="Sign in to comment..." property="comment"}}
+                {{simditor-editor placeholder="Sign in to comment" update=(action (mut value)) editor=(mut editor) }}
               </div>
               <ul class="media-list">
                   <li class="media">
