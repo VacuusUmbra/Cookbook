@@ -16,6 +16,10 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       outlet: "leftBar",
       into: "application"
     });
+    this.render("application-footer", {
+      outlet: "footer",
+      into: "application"
+    });
   },
 
   actions: {
