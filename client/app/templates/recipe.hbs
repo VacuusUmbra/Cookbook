@@ -80,9 +80,11 @@
           <div id="comments">
               <h2>Comments</h2>
               <div style="margin-bottom:20px;">
-                {{simditor-editor placeholder="Sign in to comment" update=(action (mut value)) editor=(mut editor) }}
+                {{simditor-editor placeholder="Sign in to comment" update=(action (mut value)) editor=(mut editor)}}
               </div>
-              <ul class="media-list">
+              {{bs-button defaultText="Submit" type="success" action=(action "newComment") buttonType="submit"}}
+              {{bs-button defaultText="Clear" type="primary" action=(action "clearText") buttonType="submit"}}
+              <ul class="media-list" style="margin-top:20px;">
                   <li class="media">
                       <div class="media-left"><a href="#"> <img class="media-object"
                                                                 alt="64x64"
@@ -118,7 +120,7 @@
                                                                         alt="64x64"
                                                                         src="http://placehold.it/64x64"
                                                                         style="width: 64px; height: 64px;"> </a></div>
-                              <div class="media-body"><h4 class="media-heading">Nested media heading</h4> Cras sit amet
+                              <div class="media-body"><h4 class="media-heading">Example User</h4> Cras sit amet
                                   nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.
                                   Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
                               </div>

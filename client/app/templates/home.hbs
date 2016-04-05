@@ -76,7 +76,7 @@
           </div>
           <div class="row">
               <div style="margin-left: 20px; margin-top:20px;" class="col-md-11">
-                {{bs-textarea placeholder="Directions" property="directions"}}
+                {{simditor-editor placeholder="Directions" update=(action (mut value)) editor=(mut editor)}}
               </div>
           </div>
       {{/bs-form}}
