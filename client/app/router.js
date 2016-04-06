@@ -10,7 +10,8 @@ Router.map(function() {
   this.route("about");
   this.route('menu');
   this.route('profile');
-  this.route('recipe');
+  this.route('recipe', { path: "/recipes/:recipe_id" });
+  this.route('comment');
 });
 
 export default Router;

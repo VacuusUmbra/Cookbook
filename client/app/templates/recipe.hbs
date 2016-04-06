@@ -2,77 +2,27 @@
     <div class="col-md-6 col-md-push-3">
         <div id="title">
             <div class="page-header">
-                <h1>Example recipe
-                    <small>By Example user</small>
+                <h1>{{model.name}}
+                    <small>by {{model.author}}</small>
                 </h1>
             </div>
         </div>
         <div class="media">
             <a class="media-left" href="#">
-                <img class="media-object" src="http://placehold.it/150x150" alt="Placeholder image">
+                <img class="media-object" src="{{model.image}}" alt="Placeholder image">
             </a>
             <div class="media-body">
                 <div id="preptime">
-                    <span> <b>Preptime:</b> Example time </span>
+                    <span> <b>Preptime:</b> {{model.preptime}} </span>
                 </div>
                 <div id="cooktime">
-                    <span> <b>Cooktime:</b> Example time </span>
+                    <span> <b>Cooktime:</b> {{model.cooktime}} </span>
                 </div>
             </div>
             <hr/>
         </div>
         <div id="content">
-            <p>
-                <!-- Example content, later it will be fetched from the server, of course -->
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id diam risus. Nam egestas ipsum a
-                quam
-                condimentum luctus. Sed magna nibh, fringilla sit amet urna a, cursus porttitor urna. Ut ipsum metus,
-                consequat quis lectus eget, tristique vehicula sapien. Nunc blandit nulla vitae bibendum pulvinar. Ut
-                tincidunt posuere mi et facilisis. Donec sit amet laoreet tortor. Vestibulum posuere neque et mi
-                imperdiet
-                viverra. Ut ultricies dui a sodales dictum. Proin placerat vulputate faucibus. Duis quis luctus sem, in
-                imperdiet arcu. Sed ut aliquam lectus. Vivamus sit amet tempor tortor. </p>
-
-            <p>Aliquam pharetra dignissim dolor eget varius. Aliquam eu libero quis dolor ultricies consequat vel nec
-                lacus. In pellentesque aliquet dolor, ut sodales quam consequat sed. Maecenas blandit molestie tortor
-                sed
-                congue. Suspendisse rutrum et metus quis condimentum. Quisque vehicula eros eget mauris rhoncus
-                scelerisque.
-                Sed sit amet tempus tortor. Phasellus ac lacus eu nulla pellentesque ultrices. Interdum et malesuada
-                fames
-                ac ante ipsum primis in faucibus.</p>
-
-            <p>Donec eget magna nec lectus fringilla sagittis a vitae leo. Aliquam nec ligula venenatis massa blandit
-                vehicula ac eu erat. Integer condimentum elit vel consectetur molestie. Praesent varius libero nec nibh
-                tempor, quis tincidunt velit rhoncus. Morbi consequat auctor pharetra. Donec dapibus felis et volutpat
-                interdum. Vestibulum elementum id libero sit amet eleifend. Duis varius sollicitudin ex. Vivamus cursus
-                aliquet sem et suscipit. Proin hendrerit volutpat eros. Curabitur iaculis pharetra libero, ut dapibus
-                justo
-                vestibulum a. Proin nisl nisl, sodales vitae laoreet sit amet, finibus at justo. Suspendisse viverra
-                sollicitudin mauris vel convallis. Ut eu ipsum eros. Nullam neque massa, rutrum vitae laoreet a,
-                faucibus
-                sed tortor. Integer nec consectetur mauris.</p>
-
-            <p>Morbi lacinia ex dignissim, congue diam eget, pellentesque nibh. Pellentesque non interdum neque. Fusce
-                felis tellus, ullamcorper sit amet quam at, dictum viverra massa. Pellentesque molestie consequat justo
-                sit
-                amet gravida. Pellentesque eleifend nulla erat, quis convallis orci sollicitudin non. Pellentesque sit
-                amet
-                eleifend nulla. Nullam nisl nisi, lacinia ac elit sit amet, lacinia dignissim mi. Donec non orci quis
-                erat
-                porta vehicula vitae nec quam. In nibh est, volutpat eget urna eu, feugiat hendrerit justo. Phasellus
-                sagittis, leo vel maximus semper, nibh dui euismod nisl, vel placerat arcu lectus eu neque. Ut sit amet
-                bibendum tortor, id molestie nulla.</p>
-
-            <p>Nunc in tristique felis. Quisque sed consectetur nulla, id molestie ipsum. Aenean fringilla accumsan
-                risus
-                vitae tempus. Quisque risus eros, pellentesque et turpis sit amet, ullamcorper tincidunt lorem. In
-                venenatis, massa ac cursus tincidunt, sem elit efficitur quam, eu faucibus neque libero ullamcorper ex.
-                Pellentesque felis diam, fermentum a leo vitae, posuere lacinia nulla. Vestibulum vulputate lacus dui,
-                tristique volutpat quam feugiat at. Aliquam erat volutpat. Integer finibus libero ligula, sit amet
-                fringilla
-                risus interdum ut.
-            </p>
+          {{{model.body}}}
         </div>
       {{#if session.isAuthenticated}}
 
@@ -86,46 +36,9 @@
               {{bs-button defaultText="Clear" type="primary" action=(action "clearText") buttonType="submit"}}
               <ul class="media-list" style="margin-top:20px;">
                   <li class="media">
-                      <div class="media-left"><a href="#"> <img class="media-object"
-                                                                alt="64x64"
-                                                                src="http://placehold.it/64x64"
-                                                                style="width: 64px; height: 64px;"> </a></div>
-                      <div class="media-body"><h4 class="media-heading">Example User</h4>
-                          <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin
-                              commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
-                          <div class="media">
-                              <div class="media-left"><a href="#"> <img class="media-object"
-                                                                        alt="64x64"
-                                                                        src="http://placehold.it/64x64"
-                                                                        style="width: 64px; height: 64px;"> </a></div>
-                              <div class="media-body"><h4 class="media-heading">Example User</h4> Cras sit amet
-                                  nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.
-                                  Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                                  <div class="media">
-                                      <div class="media-left"><a href="#"> <img class="media-object"
-                                                                                alt="64x64"
-                                                                                src="http://placehold.it/64x64"
-                                                                                style="width: 64px; height: 64px;"> </a>
-                                      </div>
-                                      <div class="media-body"><h4 class="media-heading">Example User</h4> Cras sit
-                                          amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                          sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus
-                                          viverra turpis.
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="media">
-                              <div class="media-left"><a href="#"> <img class="media-object"
-                                                                        alt="64x64"
-                                                                        src="http://placehold.it/64x64"
-                                                                        style="width: 64px; height: 64px;"> </a></div>
-                              <div class="media-body"><h4 class="media-heading">Example User</h4> Cras sit amet
-                                  nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.
-                                  Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                              </div>
-                          </div>
-                      </div>
+                      {{#each model.comment as |recipeComment|}}
+                        {{commnet-display body=recipeComment.body author=recipeComment.author}}
+                      {{/each}}
                   </li>
               </ul>
           </div>

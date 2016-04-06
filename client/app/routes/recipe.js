@@ -9,5 +9,9 @@ export default Ember.Route.extend({
       outlet: "leftBar",
       into: "application"
     });
+  },
+
+  model: function(params) {
+    return this.store.findRecord("recipe", params.recipe_id);
   }
 });
