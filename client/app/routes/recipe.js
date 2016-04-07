@@ -12,6 +12,6 @@ export default Ember.Route.extend({
   },
 
   model: function(params) {
-    return this.store.findRecord("recipe", params.recipe_id);
+    return this.store.findRecord("recipe", params.recipe_id,  { reload: true });
   }
 });

@@ -1,5 +1,27 @@
 export default function () {
-  this.get("api/v1/recipes", function () {
+  //this.namespace = 'api/v1';    // make this `api`, for example, if your API is namespaced
+  // this.timing = 400;      // delay for each request, automatically set to 0 during testing
+
+  this.get('api/v1/recipes');
+  // this.post('/posts');
+  this.get('api/v1/recipes/:id');
+  // this.put('/posts/:id'); // or this.patch
+  // this.del('/posts/:id');
+
+  this.get('/recipe/:id/comments', function (schema, request) {
+    const recipeId = request.params.id;
+    console.log(schema.comment.where({recipeid: recipeId}));
+    return schema.comment.where({recipeid: recipeId});
+  });
+
+  this.post('api/v1/comments', function (schema, request) {
+    console.log(schema.comment);
+    let temp = schema.comment.create("comment", request);
+    console.log(schema.comment.where({recipeid: 1}));
+    return temp;
+  });
+
+  /*this.get("api/v1/recipes", function () {
     return {
       data: [
         {
@@ -80,6 +102,14 @@ export default function () {
           image: "http://placehold.it/250x150",
           body: "<p><!-- Example content, later it will be fetched from the server, of course --> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id diam risus. Nam egestas ipsum a quam condimentum luctus. Sed magna nibh, fringilla sit amet urna a, cursus porttitor urna. Ut ipsum metus, consequat quis lectus eget, tristique vehicula sapien. Nunc blandit nulla vitae bibendum pulvinar. Ut tincidunt posuere mi et facilisis. Donec sit amet laoreet tortor. Vestibulum posuere neque et mi imperdiet viverra. Ut ultricies dui a sodales dictum. Proin placerat vulputate faucibus. Duis quis luctus sem, in imperdiet arcu. Sed ut aliquam lectus. Vivamus sit amet tempor tortor. </p> <p>Aliquam pharetra dignissim dolor eget varius. Aliquam eu libero quis dolor ultricies consequat vel nec lacus. In pellentesque aliquet dolor, ut sodales quam consequat sed. Maecenas blandit molestie tortor sed congue. Suspendisse rutrum et metus quis condimentum. Quisque vehicula eros eget mauris rhoncus scelerisque. Sed sit amet tempus tortor. Phasellus ac lacus eu nulla pellentesque ultrices. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p> <p>Donec eget magna nec lectus fringilla sagittis a vitae leo. Aliquam nec ligula venenatis massa blandit vehicula ac eu erat. Integer condimentum elit vel consectetur molestie. Praesent varius libero nec nibh tempor, quis tincidunt velit rhoncus. Morbi consequat auctor pharetra. Donec dapibus felis et volutpat interdum. Vestibulum elementum id libero sit amet eleifend. Duis varius sollicitudin ex. Vivamus cursus aliquet sem et suscipit. Proin hendrerit volutpat eros. Curabitur iaculis pharetra libero, ut dapibus justo vestibulum a. Proin nisl nisl, sodales vitae laoreet sit amet, finibus at justo. Suspendisse viverra sollicitudin mauris vel convallis. Ut eu ipsum eros. Nullam neque massa, rutrum vitae laoreet a, faucibus sed tortor. Integer nec consectetur mauris.</p> <p>Morbi lacinia ex dignissim, congue diam eget, pellentesque nibh. Pellentesque non interdum neque. Fusce felis tellus, ullamcorper sit amet quam at, dictum viverra massa. Pellentesque molestie consequat justo sit amet gravida. Pellentesque eleifend nulla erat, quis convallis orci sollicitudin non. Pellentesque sit amet eleifend nulla. Nullam nisl nisi, lacinia ac elit sit amet, lacinia dignissim mi. Donec non orci quis erat porta vehicula vitae nec quam. In nibh est, volutpat eget urna eu, feugiat hendrerit justo. Phasellus sagittis, leo vel maximus semper, nibh dui euismod nisl, vel placerat arcu lectus eu neque. Ut sit amet bibendum tortor, id molestie nulla.</p> <p>Nunc in tristique felis. Quisque sed consectetur nulla, id molestie ipsum. Aenean fringilla accumsan risus vitae tempus. Quisque risus eros, pellentesque et turpis sit amet, ullamcorper tincidunt lorem. In venenatis, massa ac cursus tincidunt, sem elit efficitur quam, eu faucibus neque libero ullamcorper ex. Pellentesque felis diam, fermentum a leo vitae, posuere lacinia nulla. Vestibulum vulputate lacus dui, tristique volutpat quam feugiat at. Aliquam erat volutpat. Integer finibus libero ligula, sit amet fringilla risus interdum ut. </p>",
           comments: [1, 2]
+        },
+        relationships: {
+          comments: {
+            data: {
+              type: "comment",
+              id: "1"
+            }
+          }
         }
       }
     };
@@ -97,6 +127,23 @@ export default function () {
       }
     };
   });
+
+  this.get("api/v1/comments", function () {
+    return {
+      data: [
+        {
+          id: 1,
+          attributes: {
+            commentid: 1,
+            recipeid: 1,
+            author: "memer",
+            body: "<p> FIRST! </p>"
+          }
+        }
+      ]
+    }
+  });
+
 
   // These comments are here to help you get started. Feel free to delete them.
 

@@ -32,14 +32,12 @@
               <div style="margin-bottom:20px;">
                 {{simditor-editor placeholder="Sign in to comment" update=(action (mut value)) editor=(mut editor)}}
               </div>
-              {{bs-button defaultText="Submit" type="success" action=(action "newComment") buttonType="submit"}}
-              {{bs-button defaultText="Clear" type="primary" action=(action "clearText") buttonType="submit"}}
+            {{bs-button defaultText="Submit" type="success" action=(action "newComment") buttonType="submit"}}
+            {{bs-button defaultText="Clear" type="primary" action=(action "clearText") buttonType="submit"}}
               <ul class="media-list" style="margin-top:20px;">
-                  <li class="media">
-                      {{#each model.comment as |recipeComment|}}
-                        {{commnet-display body=recipeComment.body author=recipeComment.author}}
-                      {{/each}}
-                  </li>
+                {{#each model.comments as |recipeComment|}}
+                  {{comment-display body=recipeComment.body author=recipeComment.author}}
+                {{/each}}
               </ul>
           </div>
       {{/if}}
