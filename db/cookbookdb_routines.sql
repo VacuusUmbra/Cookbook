@@ -214,9 +214,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `new_flag`(
 	newFlaggedUser VARCHAR(45),
     newFlaggingUser VARCHAR(45),
     newDescriptor INT(1)
+    #newCommentID INT(11),
+    #newRecipeID INT(11)
     )
 BEGIN
-	INSERT INTO cookbooddb.flags (
+	INSERT INTO cookbookdb.flags (
 		userFlagged,
 		FlaggedBy,
 		commentORrecipe
@@ -226,6 +228,22 @@ BEGIN
         newFlaggingUser,
         newDescriptor
     );
+	#IF newDescriptor = 1 
+    #THEN INSERT INTO cookbookdb.flags(
+	#	commentOrRecipeID
+    #    )
+    #    VALUES (
+	#		newCommentID
+    #        );
+	#ELSEIF newDescriptor = 0 
+    #THEN INSERT INTO cookbookdb.flags(
+	#	commentOrRecipeID
+   #     )
+    #    VALUES (
+	#		newRecipeID
+   #         );
+	#END IF;
+
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -448,6 +466,25 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `update_commentFlag` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_commentFlag`()
+BEGIN
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `update_cookTime` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -600,6 +637,25 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `update_recipeFlag` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_recipeFlag`()
+BEGIN
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `update_recipeName` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -625,6 +681,31 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `update_userFlag` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_userFlag`(
+	uName VARCHAR(45)
+    )
+BEGIN
+	UPDATE cookbookdb.users
+    SET numFlags = (SELECT COUNT(userFlagged) 
+					FROM cookbookdb.flags 
+                    WHERE userFlagged = uName)
+	WHERE userName = uName;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `update_userName` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -644,6 +725,30 @@ BEGIN
 	UPDATE cookbookdb.users 
     SET userName = newName
     WHERE userName = uName and userPass =uPass; 
+    
+    UPDATE cookbookdb.recipe
+    SET creatorName = newName
+    WHERE creatorName = uName;
+    
+    UPDATE cookbookdb.savedrecipes
+    SET savedByUser = newName
+    WHERE savedByUser = uName;
+    
+    UPDATE cookbookdb.flags
+    SET userFlagged = newName
+    WHERE userFlagged = uName;
+    
+    UPDATE cookbookdb.flags
+    SET FlaggedBy = newName
+    WHERE FlaggedBy = uName;
+    
+    UPDATE cookbookdb.comments
+    SET cAuthor = newName
+    WHERE cAuthor = uName;
+    
+    UPDATE cookbookdb.tags
+    SET createdBy = newName
+    WHERE createdBy = uName;
 
 
 END ;;
@@ -662,4 +767,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-10 20:04:36
+-- Dump completed on 2016-04-10 22:54:26

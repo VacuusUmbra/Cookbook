@@ -44,7 +44,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('Ace','gameboy','jgonz@gmail.com','N','hey I\'m Ace nice to meet you',0,'Yes'),('GollyGon','banme','gollyG@wiilikers.net','Y','I am so getting banned',11,'No'),('LasterNamerson','bumping','jimboG@yahoo.com','N','What is my last name anyway??',0,'No');
+INSERT INTO `users` VALUES ('Acnet','gameboy','jgonz@gmail.com','N','hey I\'m Ace nice to meet you',0,'Yes'),('GollyGo','banme','gollyG@wiilikers.net','Y','I am so getting banned',11,'No'),('Jalvo','12345','123FakeEmail@yea.com','N','Yo yo it Jalvo!',2,'N'),('LasterNamerson','bumping','jimboG@yahoo.com','N','What is my last name anyway??',0,'No');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-10 20:04:34
+-- Dump completed on 2016-04-10 22:54:24

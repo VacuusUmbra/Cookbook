@@ -29,9 +29,10 @@ CREATE TABLE `flags` (
   `userFlagged` varchar(45) NOT NULL,
   `FlaggedBy` varchar(45) NOT NULL,
   `commentORrecipe` int(1) DEFAULT NULL,
+  `commentOrRecipeID` int(11) DEFAULT NULL,
   PRIMARY KEY (`fID`),
   UNIQUE KEY `fID_UNIQUE` (`fID`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='a list of all registered flags';
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='a list of all registered flags';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +41,7 @@ CREATE TABLE `flags` (
 
 LOCK TABLES `flags` WRITE;
 /*!40000 ALTER TABLE `flags` DISABLE KEYS */;
-INSERT INTO `flags` VALUES (1,'GollyGo','Jalvo',1),(2,'GollyGo','Jalvo',0),(3,'Javlo','LasterNamerson',1),(4,'GollyGo','LasterNamerson',1),(5,'GollyGo','Jalvo',1),(6,'GollyGo','Ace',0),(7,'GollyGo','Jalvo',0),(8,'GollyGo','Ace',1),(9,'GollyGo','LasterNamerson',1),(10,'GollyGo','LasterNamerson',0),(11,'GollyGo','Jalvo',1),(12,'GollyGo','Jalvo',1);
+INSERT INTO `flags` VALUES (1,'GollyGo','Jalvo',1,0),(2,'GollyGo','Jalvo',0,0),(3,'Jalvo','LasterNamerson',1,0),(4,'GollyGo','LasterNamerson',1,0),(5,'GollyGo','Jalvo',1,0),(6,'GollyGo','Acnet',0,0),(7,'GollyGo','Jalvo',0,0),(8,'GollyGo','Acnet',1,0),(9,'GollyGo','LasterNamerson',1,0),(10,'GollyGo','LasterNamerson',0,0),(11,'GollyGo','Jalvo',1,0),(12,'GollyGo','Jalvo',1,0),(15,'Jalvo','Acnet',1,NULL);
 /*!40000 ALTER TABLE `flags` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-10 20:04:33
+-- Dump completed on 2016-04-10 22:54:24

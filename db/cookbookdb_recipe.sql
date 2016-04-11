@@ -45,7 +45,7 @@ CREATE TABLE `recipe` (
 
 LOCK TABLES `recipe` WRITE;
 /*!40000 ALTER TABLE `recipe` DISABLE KEYS */;
-INSERT INTO `recipe` VALUES ('linguini',1,'25 minutes','25 minutes',4.7,'Ace',0,'dance on the bowl','Souls, and a basket of gravy');
+INSERT INTO `recipe` VALUES ('linguini',1,'25 minutes','25 minutes',4.7,'Acnet',0,'dance on the bowl','Souls, and a basket of gravy');
 /*!40000 ALTER TABLE `recipe` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-10 20:04:34
+-- Dump completed on 2016-04-10 22:54:25

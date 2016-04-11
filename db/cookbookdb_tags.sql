@@ -28,9 +28,7 @@ CREATE TABLE `tags` (
   `tagName` varchar(45) NOT NULL,
   `createdBy` varchar(45) NOT NULL,
   PRIMARY KEY (`tagName`),
-  UNIQUE KEY `tagName_UNIQUE` (`tagName`),
-  KEY `createdBy_idx` (`createdBy`),
-  CONSTRAINT `createdBy` FOREIGN KEY (`createdBy`) REFERENCES `users` (`userName`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  UNIQUE KEY `tagName_UNIQUE` (`tagName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='a list of all tags, and who created them';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -40,7 +38,7 @@ CREATE TABLE `tags` (
 
 LOCK TABLES `tags` WRITE;
 /*!40000 ALTER TABLE `tags` DISABLE KEYS */;
-INSERT INTO `tags` VALUES ('pasta','Ace');
+INSERT INTO `tags` VALUES ('pasta','Acnet');
 /*!40000 ALTER TABLE `tags` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-10 20:04:34
+-- Dump completed on 2016-04-10 22:54:25
