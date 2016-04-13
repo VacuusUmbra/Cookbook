@@ -9,8 +9,8 @@ var express = require("express"),
 var connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "Justin343!",
-    database: "mydb"
+    password: "root",
+    database: "cookbookdb"
 });
 
 app.use(bodyParser.urlencoded({
@@ -78,7 +78,6 @@ app.post("/login", function(req, res, next) {
             req.body.client_id + "&redirect_uri=" + req.body.redirect_uri);
     }
 });
-
 
 app.get("/api/v1/recipes/", function(req, res) {
     // search database tags with query
