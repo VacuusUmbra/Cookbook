@@ -6,4 +6,4 @@ CREATE TABLE `users` (
   `userName` varchar(45) NOT NULL DEFAULT '*******',
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='This table stores user information';
 
-INSERT INTO `token` VALUES ("", "");
+INSERT INTO `token` VALUES ("test", "Jalvo");
