@@ -35,35 +35,37 @@
                   <div class="row">
                       <div class="col-md-5">
                           <div style="margin-left: 20px;" class="input-group col-md-12">
-                              <input type="text" class="form-control" placeholder="Cooktime">
-                              <span class="input-group-addon" property="cooktime">mins</span>
+                              <input type="text" class="form-control" placeholder="Cooktime" id="cooktime">
+                              <span class="input-group-addon">mins</span>
                           </div>
                       </div>
                       <div class="col-md-5">
                           <div style="margin-left: 20px;" class="input-group col-md-12">
-                              <input type="text" class="form-control" placeholder="Preptime">
-                              <span class="input-group-addon" property="preptime">mins</span>
+                              <input type="text" class="form-control" placeholder="Preptime" id="preptime">
+                              <span class="input-group-addon">mins</span>
                           </div>
                       </div>
                   </div>
-                  <div class="row">
+              </div>
+              <div class="row">
+                  <div class="col-md-12" style="margin-left: -25px;">
                       <div class="col-md-2">
-                        {{bs-form-element controlType="checkbox" label="tag1" property="tag1"}}
+                        {{bs-form-element controlType="checkbox" label="Pasta" value=tag1}}
                       </div>
                       <div class="col-md-2">
-                        {{bs-form-element controlType="checkbox" label="tag2" property="tag2"}}
+                        {{bs-form-element controlType="checkbox" label="Chinese" value=tag2}}
                       </div>
                       <div class="col-md-2">
-                        {{bs-form-element controlType="checkbox" label="tag3" property="tag3"}}
+                        {{bs-form-element controlType="checkbox" label="French" value=tag3}}
                       </div>
                       <div class="col-md-2">
-                        {{bs-form-element controlType="checkbox" label="tag4" property="tag4"}}
+                        {{bs-form-element controlType="checkbox" label="Test" value=tag4}}
                       </div>
                       <div class="col-md-2">
-                        {{bs-form-element controlType="checkbox" label="tag5" property="tag5"}}
+                        {{bs-form-element controlType="checkbox" label="Pizza" value=tag5}}
                       </div>
                       <div class="col-md-2">
-                        {{bs-form-element controlType="checkbox" label="tag6" property="tag6"}}
+                        {{bs-form-element controlType="checkbox" label="Salad" value=tag6}}
                       </div>
                   </div>
               </div>

@@ -1,5 +1,6 @@
-{{#if session.isAuthenticated}}
-    <li><a href="/users/{{session.currentUser.id}}">Logged in as {{session.currentUser.email}}</a></li>
+{{#if user.isAuthenticated}}
+    <li><a href="/users/{{user.currentUser.id}}">Logged in as {{user.currentUser.userName}}</a></li>
+    <li><button type="button" {{action "logout"}} class="btn btn-default navbar-btn">Logout</button></li>
 {{else}}
     <li>
         <button type="button" {{action "openLoginModal"}} class="btn btn-default navbar-btn">Login</button>
@@ -10,7 +11,15 @@
 <div id="loginModal">
   {{#bs-modal body=false open=loginModal footer=false title="Login"}}
     {{#bs-modal-body}}
-
+      {{#bs-form formLayout="horizontal" model=this action="authenticate" on="submit"}}
+        {{bs-form-element controlType="text" label="Username" placeholder="Username" property="email"}}
+        {{bs-form-element controlType="password" label="Password" placeholder="Password" property="password"}}
+        {{bs-form-element controlType="checkbox" label="Remember me" property="rememberMe"}}
+        {{#bs-button-group}}
+          {{bs-button defaultText="Login" type="success" buttonType="submit"}}
+          {{bs-button defaultText="Register" type="primary"}}
+        {{/bs-button-group}}
+      {{/bs-form}}
     {{/bs-modal-body}}
   {{/bs-modal}}
 </div>

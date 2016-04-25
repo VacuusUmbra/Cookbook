@@ -6,7 +6,7 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Test Profile</h3>
+                                <h3 class="panel-title">{{model.username}}</h3>
                             </div>
                             <div class="panel-body">
                                 <div id="profile-image">
@@ -32,7 +32,7 @@
             <img src="http://placehold.it/1155x230" style="padding-bottom: 50px;"/>
             <div id="my-recipes">
                 <div class="row">
-                  {{#if admin}}
+                  {{#if session.currentUser.isAdmin}}
                       <div class="row">
                           <div class="col-md-4">
                               <div class="panel panel-default">
@@ -41,11 +41,10 @@
                                   </div>
                                   <div class="panel-body">
                                       <ul class="list-group">
-                                          <li class="list-group-item">Example Recipe 1</li>
-                                          <li class="list-group-item">Example Recipe 2</li>
-                                          <li class="list-group-item">Example Recipe 3</li>
-                                          <li class="list-group-item">Example Recipe 4</li>
-                                          <li class="list-group-item">Example Recipe 5</li>
+                                        {{#each seassion.currentUser.saved as |saved|}}
+                                            <li class="list-group-item"><a src="/recipe/{{saved}}">Recipe {{saved}}</a>
+                                            </li>
+                                        {{/each}}
                                       </ul>
                                   </div>
                               </div>
@@ -57,11 +56,10 @@
                                   </div>
                                   <div class="panel-body">
                                       <ul class="list-group">
-                                          <li class="list-group-item">Example Recipe 1</li>
-                                          <li class="list-group-item">Example Recipe 2</li>
-                                          <li class="list-group-item">Example Recipe 3</li>
-                                          <li class="list-group-item">Example Recipe 4</li>
-                                          <li class="list-group-item">Example Recipe 5</li>
+                                        {{#each seassion.currentUser.saved as |saved|}}
+                                            <li class="list-group-item"><a src="/recipe/{{saved}}">Recipe {{saved}}</a>
+                                            </li>
+                                        {{/each}}
                                       </ul>
                                   </div>
                               </div>
@@ -132,11 +130,10 @@
                               </div>
                               <div class="panel-body">
                                   <ul class="list-group">
-                                      <li class="list-group-item">Example Recipe 1</li>
-                                      <li class="list-group-item">Example Recipe 2</li>
-                                      <li class="list-group-item">Example Recipe 3</li>
-                                      <li class="list-group-item">Example Recipe 4</li>
-                                      <li class="list-group-item">Example Recipe 5</li>
+                                    {{#each model.savedrecipes as |saved|}}
+                                        <li class="list-group-item"><a href="/recipes/{{saved}}">Recipe {{saved}}</a>
+                                        </li>
+                                    {{/each}}
                                   </ul>
                               </div>
                           </div>
@@ -148,11 +145,10 @@
                               </div>
                               <div class="panel-body">
                                   <ul class="list-group">
-                                      <li class="list-group-item">Example Recipe 1</li>
-                                      <li class="list-group-item">Example Recipe 2</li>
-                                      <li class="list-group-item">Example Recipe 3</li>
-                                      <li class="list-group-item">Example Recipe 4</li>
-                                      <li class="list-group-item">Example Recipe 5</li>
+                                    {{#each model.recipes as |recipe|}}
+                                        <li class="list-group-item"><a href="/recipes/{{recipe.id}}">{{recipe.name}}</a>
+                                        </li>
+                                    {{/each}}
                                   </ul>
                               </div>
                           </div>

@@ -7,6 +7,8 @@ export default function () {
   this.get('api/v1/recipes/:id');
   // this.put('/posts/:id'); // or this.patch
   // this.del('/posts/:id');
+  this.passthrough('http://127.0.0.1:13337/api/v1/token');
+  this.passthrough('http://127.0.0.1:13337/api/v1/users/**');
 
   this.get('/recipe/:id/comments', function (schema, request) {
     const recipeId = request.params.id;

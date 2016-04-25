@@ -11,6 +11,7 @@
     "Faker": "~3.0.0",
     "tagmanager": "https://github.com/max-favilli/tagmanager",
     "bootswatch": "^3.3.6",
-    "simditor": "^2.3.6"
+    "simditor": "^2.3.6",
+    "blob-polyfill": "^1.0.20150320"
   }
 }

@@ -121,6 +121,11 @@ class JSONAPIResponse {
     }
 }
 
+var exports = module.exports = {};
+
+exports.JSONAPIRelationship = JSONAPIRelationship;
+exports.JSONAPIResponse = JSONAPIResponse;
+
 // Example usage / tests
 /*var japi = new JSONAPIResponse({hasRelationships: true});
 var jrel = new JSONAPIRelationship("test");

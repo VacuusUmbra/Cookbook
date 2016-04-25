@@ -9,5 +9,6 @@ export default DS.Model.extend({
   recipeid: DS.attr(),
   preptime: DS.attr(),
   cooktime: DS.attr(),
+  ingredients: DS.attr(),
   comments: DS.hasMany("comment", {async:true})
 });
